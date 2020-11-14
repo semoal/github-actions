@@ -2,6 +2,9 @@ name: 'Verdaccio Publish Action v2'
 description: 'This action will deploy your package to Verdaccio Registry'
 author: 'GitHub'
 inputs:
+  run:
+    description: 'Run command in container'
+    required: false
   debug:
     description: 'npm debug level'
     default: '-ddd'
