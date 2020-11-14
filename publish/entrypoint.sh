@@ -13,9 +13,4 @@ sh -c "nohup verdaccio --config $HOME/.config/verdaccio/config.yaml &>$tmp_regis
 # FIXME: this throws a syntax error, but would be great to make it run
 # grep -q 'http address' <(tail -f $tmp_registry_log)
 # login so we can publish packages
-sh -c "npm-auth-to-token -u test -p test -e test@test.com -r $local_registry"
-# Run nmp command
-sh -c "node ./scripts/verdaccio-release.js"
-
-sh -c "node ./scripts/verdaccio-integration.js"
-
+echo "$INPUT_RUN" | sed -e 's/\\n/;/g' > semicolon_delimited_script
